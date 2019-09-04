@@ -1,8 +1,6 @@
-<script>
   /***
    * 用来显示 个人与他人关注的书籍, 个人空间可以取消关注
    * */
-</script>
 <template>
   <div style="width: 100%;min-height: 200px">
     <div style="width: 100%;min-height: 400px" v-if="page.total == 0">
@@ -68,7 +66,7 @@
           if ($('.button > span').eq(index).text() == "取消关注") {
             this.$axios.post('/api/book/unfollow/'+bookId).then(response =>{
               if (response.data){
-                this.$Message.success("取消关注成功！");
+                this.$Message.success("取消关注成功！hhhhhhhhh");
                 $('.button > span').eq(index).text("关注书籍");
                 $('.button').eq(index).removeClass("ivu-btn-error");
                 $('.button').eq(index).addClass("ivu-btn-success");

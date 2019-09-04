@@ -26,11 +26,17 @@ public class CollectController {
 
     @RequestMapping("/collectBook")
     public boolean collectBook(@RequestBody Collect collect){
+//        System.out.println("---------");
+//        System.out.println(collect.toString());
+//        System.out.println("---------");
         return collectService.collectBooktoFolder(collect);
     }
 
     @RequestMapping("/unCollectBook")
     public boolean unCollectBook(@RequestBody Collect collect){
+//        System.out.println("---------");
+//        System.out.println(collect.toString());
+//        System.out.println("---------");
         return collectService.cancelCollect(collect);
     }
 

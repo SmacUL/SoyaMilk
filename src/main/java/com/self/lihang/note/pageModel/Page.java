@@ -51,4 +51,14 @@ public class Page {
     public void setList(List list) {
         this.list = list;
     }
+
+    public void printAll() {
+        System.out.println(this.totalCount + " " +
+                            this.pageSize + " " +
+                            this.pageNo + " " +
+                            this.startRow + " "
+
+                );
+    }
+
 }

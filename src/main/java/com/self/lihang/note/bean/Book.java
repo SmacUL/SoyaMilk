@@ -7,6 +7,22 @@ public class Book {
     public String  bookContributors;
     public String bookCover;
     public Integer belongSubdivision_id;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", bookName='" + bookName + '\'' +
+                ", bookContributors='" + bookContributors + '\'' +
+                ", bookCover='" + bookCover + '\'' +
+                ", belongSubdivision_id=" + belongSubdivision_id +
+                ", bookBriefIntroduction='" + bookBriefIntroduction + '\'' +
+                ", noteNumber=" + noteNumber +
+                ", authorInfo='" + authorInfo + '\'' +
+                ", catalog='" + catalog + '\'' +
+                '}';
+    }
+
     public String bookBriefIntroduction;
     public Integer noteNumber;
     public String authorInfo;
@@ -86,16 +102,4 @@ public class Book {
         this.noteNumber = noteNumber;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,6 +1,12 @@
 package com.self.lihang.note.controller;
 
-
+/**
+ * 获得书的内容
+ * 更新（增减）书籍的笔记数量
+ * 获取书籍 --- 分页 查询 走马灯
+ * 获取书籍的热度信息
+ * 是否关注&关注&取消书籍
+ */
 
 import com.self.lihang.note.bean.Book;
 import com.self.lihang.note.pageModel.BookInfo;
@@ -27,7 +33,8 @@ public class BookController {
      * */
     @RequestMapping(value = "/getBook/{bookId}")
     public Book getBook(@PathVariable Integer bookId){
-        return bookService.getBook(bookId);
+        Book book = bookService.getBook(bookId);
+        return book;
     }
 
     /**
@@ -48,7 +55,7 @@ public class BookController {
      * */
     @RequestMapping("/getBookByPage/{subdivisionId}")
     public Page getSubdivisionBooks(@PathVariable Integer subdivisionId, @RequestBody Page page){
-        return bookService.getBooks(subdivisionId,page);
+        return bookService.getBooks(subdivisionId, page);
     }
 
     @RequestMapping("/getMyFollowBook/{userId}")

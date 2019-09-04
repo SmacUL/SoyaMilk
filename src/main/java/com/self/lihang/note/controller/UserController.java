@@ -68,7 +68,7 @@ public class UserController {
      * */
     @RequestMapping("/loadMyFollow/{userId}")
     public Page loadFollow(@PathVariable Integer userId,@RequestBody Page page){
-     return userService.loadFollowUser(userId,page);
+        return userService.loadFollowUser(userId,page);
     }
     /**
      * 加载用户成就

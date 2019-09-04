@@ -5,6 +5,16 @@ import java.sql.Timestamp;
 
 public class Collect {
     private Integer folder_id;
+
+    @Override
+    public String toString() {
+        return "Collect{" +
+                "folder_id=" + folder_id +
+                ", notebook_id=" + notebook_id +
+                ", collectionTime=" + collectionTime +
+                '}';
+    }
+
     private Integer notebook_id;
     private Timestamp collectionTime;
 

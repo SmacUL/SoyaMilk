@@ -1,8 +1,4 @@
-<script>
-  /**
-   * 该组件接受 分类参数 id, 并向后端请求该类数据。并分页显示
-   * */
-</script>
+// 该组件接受 分类参数 id, 并向后端请求该类数据。并分页显示
 <template>
     <div class="pageDiv">
       <section>
