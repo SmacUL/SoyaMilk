@@ -4,9 +4,11 @@ import com.self.lihang.note.bean.CollectionFolder;
 import com.self.lihang.note.pageModel.CollectionFolderModel;
 import com.self.lihang.note.pageModel.Page;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface CollectionFolderMapper {
 
 
@@ -14,7 +16,7 @@ public interface CollectionFolderMapper {
      * 删除文件夹
      * */
     @Delete("delete from collectionFolder where folderId=#{folderId}")
-    int deleteByPrimaryKey(Integer folderId);
+    int deleteByPrimaryKey(@Param("folderId") Integer folderId);
 
     /**
      * 添加文件夹
@@ -26,7 +28,7 @@ public interface CollectionFolderMapper {
      * 查找该用户的拥有的文件夹
      * */
     @Select("select * from collectionFolder where user_id=#{user_id}")
-    List<CollectionFolder> selectByUser(Integer user_id);
+    List<CollectionFolder> selectByUser(@Param("user_id") Integer user_id);
 
     /**
      * 给文件夹改名
@@ -35,6 +37,6 @@ public interface CollectionFolderMapper {
     int updateByPrimaryKey(@Param("user_id") Integer user_id,@Param("folderName") String folderName);
 
     @Select("select * from collectionFolder where user_id=#{user_id}")
-    List<CollectionFolderModel> selectByUserPage(Integer user_id, Page page);
+    List<CollectionFolderModel> selectByUserPage(@Param("user_id") Integer user_id, Page page);
 
 }

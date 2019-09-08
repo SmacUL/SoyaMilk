@@ -3,10 +3,22 @@ package com.self.lihang.note.bean;
 import java.sql.Timestamp;
 
 public class CollectionFolder {
+    @Override
+    public String toString() {
+        return "CollectionFolder{" +
+                "folderId=" + folderId +
+                ", folderName='" + folderName + '\'' +
+                ", user_id=" + user_id +
+                ", update_time=" + update_time +
+                '}';
+    }
+
     private Integer folderId;
     private String folderName;
     private Integer user_id;
     private Timestamp update_time;
+
+
 
     public Integer getFolderId() {
         return folderId;

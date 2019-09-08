@@ -11,6 +11,19 @@ public class CommentBook {
     private String comment;
     private float rate;
 
+    @Override
+    public String toString() {
+        return "CommentBook{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", book_id=" + book_id +
+                ", title='" + title + '\'' +
+                ", comment_time=" + comment_time +
+                ", comment='" + comment + '\'' +
+                ", rate=" + rate +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

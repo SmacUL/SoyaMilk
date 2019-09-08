@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     returnPreviousPage() {
-      this.$router.push({ path: "/index" });
+      this.$router.push({ name: 'collectFolder', params:{userId:this.userId}});
     }
   }
 };

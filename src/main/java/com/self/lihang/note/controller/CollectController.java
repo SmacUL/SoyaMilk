@@ -42,6 +42,7 @@ public class CollectController {
 
     @RequestMapping("/createdFolder")
     public boolean createdFolder(@RequestBody CollectionFolder collectionFolder){
+//        System.out.println(collectionFolder.toString());
         return collectService.createCollectFolder(collectionFolder);
     }
 

@@ -3,7 +3,9 @@ package com.self.lihang.note.Mapper;
 import com.self.lihang.note.bean.User;
 import com.self.lihang.note.pageModel.UserModel;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
 
     /**
@@ -16,13 +18,13 @@ public interface UserMapper {
      * 注册
      * */
     @Insert("insert into User (account, password) values (#{account},#{password})")
-    int addUser(User record);
+    int addUser(@Param("user")User record);
 
     /**
      *  查找用户
      * */
     @Select("select * from User where userId=#{userId}")
-    UserModel selectByPrimaryKey(Integer userId);
+    UserModel selectByPrimaryKey(@Param("userId")Integer userId);
 
     @Select("select * from User where userId=#{userId}")
     UserModel selectUserModelByPrimaryKey(Integer userId);
@@ -30,7 +32,7 @@ public interface UserMapper {
      *  查看账号是否存在
      * */
     @Select("select * from User where account=#{account}")
-    User SelectByAccount(String account);
+    User SelectByAccount(@Param("account") String account);
 
     /**
      * 校队账号的密码

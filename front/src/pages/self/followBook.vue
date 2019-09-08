@@ -66,7 +66,7 @@
           if ($('.button > span').eq(index).text() == "取消关注") {
             this.$axios.post('/api/book/unfollow/'+bookId).then(response =>{
               if (response.data){
-                this.$Message.success("取消关注成功！hhhhhhhhh");
+                this.$Message.success("取消关注成功！");
                 $('.button > span').eq(index).text("关注书籍");
                 $('.button').eq(index).removeClass("ivu-btn-error");
                 $('.button').eq(index).addClass("ivu-btn-success");

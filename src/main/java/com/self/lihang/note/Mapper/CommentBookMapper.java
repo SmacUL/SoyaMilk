@@ -4,6 +4,7 @@ import com.self.lihang.note.bean.CommentBook;
 import com.self.lihang.note.pageModel.CommentBookAndUserModel;
 import com.self.lihang.note.pageModel.Page;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -16,12 +17,12 @@ public interface CommentBookMapper {
     int addBookComemnt(CommentBook commentBook);
 
     @Select("select * from CommentBook where book_id = #{bookId}")
-    List<CommentBookAndUserModel> selectCommentByPage(Integer bookId, Page page);
+    List<CommentBookAndUserModel> selectCommentByPage(@Param("bookId") Integer bookId, Page page);
 
     @Select("select count(*) from CommentBook where book_id = #{BookId}")
-    int selectCommentBookCount(Integer BookId);
+    int selectCommentBookCount(@Param("BookId") Integer BookId);
 
     @Select("select count(*) from CommentBook where user_id = #{userId}")
-    int selectUserCommentBookCount(Integer userId);
+    int selectUserCommentBookCount(@Param("userId") Integer userId);
 
 }
