@@ -1,10 +1,8 @@
-<script>
-  /**
-   * 该组件是书籍的轮播图展示
-   * prop : book 对象集合 期待4个属 -- 名字 图片链接 作者 id.
-   * 通过传入的集合以及数量 完成动态分组。
-   * */
-</script>
+<!--
+  * 该组件是书籍的轮播图展示
+  * prop : book 对象集合 期待4个属 -- 名字 图片链接 作者 id.
+  * 通过传入的集合以及数量 完成动态分组。
+-->
 <template>
   <Carousel dots="inside" arrow="always" radius-dot>
     <CarouselItem v-for="(list,index) in bookArrayList" :key="index">

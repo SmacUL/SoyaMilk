@@ -1,5 +1,6 @@
 package com.self.lihang.note.controller;
 
+import com.self.lihang.note.bean.CommentBook;
 import com.self.lihang.note.bean.NoteBook;
 import com.self.lihang.note.bean.User;
 import com.self.lihang.note.pageModel.UserNoteAndBookModel;
@@ -49,5 +50,19 @@ public class NoteBookController {
     public UserNoteAndBookModel getUserNoteAndBookModel(@PathVariable Integer notebookId){
         return noteBookService.getNoteInfo(notebookId);
     }
+
+    /**
+     * 用户编辑的新笔记
+     */
+    @RequestMapping("/userNewNote")
+    public boolean userNewNote(@RequestBody NoteBook noteBook) {
+//        System.out.println(bookId + "--------------");
+        User user = (User) session.getAttribute("user");
+//        System.out.println(user.toString());
+//        System.out.println(noteBook.toString());
+        boolean result = noteBookService.userAddNewNoteBook(user, noteBook);
+        System.out.println(result);
+        return true;
+    };
 
 }

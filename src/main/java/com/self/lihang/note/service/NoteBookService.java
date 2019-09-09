@@ -18,4 +18,7 @@ public interface NoteBookService {
     Page getNoteBookByuserId(Integer userId, Page page);
 
     UserNoteAndBookModel getNoteInfo(Integer notebookId);
+
+    boolean userAddNewNoteBook(User user, NoteBook noteBook);
+
 }

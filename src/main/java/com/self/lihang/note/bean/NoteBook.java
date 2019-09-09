@@ -6,6 +6,24 @@ public class NoteBook {
 
     private Integer notebookId;
     private Integer author_id;
+
+    @Override
+    public String toString() {
+        return "NoteBook{" +
+                "notebookId=" + notebookId +
+                ", author_id=" + author_id +
+                ", isPublic=" + isPublic +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", likeNumber=" + likeNumber +
+                ", collectionNumber=" + collectionNumber +
+                ", publicTime=" + publicTime +
+                ", createTime=" + createTime +
+                ", belongBook_id=" + belongBook_id +
+                ", dislikeNumber=" + dislikeNumber +
+                '}';
+    }
+
     private Boolean isPublic;
     private String title;
     private String content;
@@ -103,4 +121,6 @@ public class NoteBook {
     public void setDislikeNumber(Integer dislikeNumber) {
         this.dislikeNumber = dislikeNumber;
     }
+
+
 }

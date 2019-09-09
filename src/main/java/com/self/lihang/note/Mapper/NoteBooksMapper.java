@@ -30,6 +30,16 @@ public interface NoteBooksMapper {
     int addNoteBoook(NoteBook record);
 
     /**
+     * 2019-09-09
+     * 上传用户上传的笔记 SmacUL
+     * 这句话有什么问题吗
+     * insert into Notebooks(author_id, content, belongBook_id，title)
+     */
+    @Insert("insert into Notebooks(author_id,content, belongBook_id, title) " +
+            "values(#{author_id}, #{content}, #{belongBook_id}, #{title})")
+    int addUserNoteBoook(NoteBook record);
+
+    /**
      *  选择某个笔记
      * */
     @Select("select * from Notebooks where notebookId=#{notebookId}")

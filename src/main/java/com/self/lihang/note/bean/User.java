@@ -4,6 +4,20 @@ public class User {
 
     private Integer userId;
     private String account;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", admin=" + admin +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", selfStyle='" + selfStyle + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     private String password;
     private boolean admin;
     private String avatarUrl;

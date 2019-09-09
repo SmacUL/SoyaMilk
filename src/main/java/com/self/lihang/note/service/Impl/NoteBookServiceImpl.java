@@ -79,4 +79,23 @@ public class NoteBookServiceImpl implements NoteBookService {
         return userNoteAndBookModel;
     }
 
+    /**
+     * 2019-09-09 SmacUL
+     * 用户添加制定文章的笔记
+     * @param user
+     * @param noteBook
+     * @return
+     */
+    @Override
+    public boolean userAddNewNoteBook(User user, NoteBook noteBook) {
+        noteBook.setAuthor_id(user.getUserId());
+        System.out.println(noteBook.toString());
+//        noteBook.setCreateTime(new Timestamp(new Date().getTime()));
+        if (noteBooksMapper.addUserNoteBoook(noteBook) > 0){
+            return true;
+        }
+        return false;
+    }
+
+
 }

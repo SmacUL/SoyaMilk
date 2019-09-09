@@ -26,29 +26,22 @@ public class CollectController {
 
     @RequestMapping("/collectBook")
     public boolean collectBook(@RequestBody Collect collect){
-//        System.out.println("---------");
-//        System.out.println(collect.toString());
-//        System.out.println("---------");
         return collectService.collectBooktoFolder(collect);
     }
 
     @RequestMapping("/unCollectBook")
     public boolean unCollectBook(@RequestBody Collect collect){
-//        System.out.println("---------");
-//        System.out.println(collect.toString());
-//        System.out.println("---------");
         return collectService.cancelCollect(collect);
     }
 
     @RequestMapping("/createdFolder")
     public boolean createdFolder(@RequestBody CollectionFolder collectionFolder){
-//        System.out.println(collectionFolder.toString());
         return collectService.createCollectFolder(collectionFolder);
     }
 
     @RequestMapping("/getCollectionFolderPage")
     public Page getCollectFolderPage(@PathVariable Integer userId, @RequestBody Page page){
-        return collectService.getMyCollectFolderByPage(userId,page);
+        return collectService.getMyCollectFolderByPage(userId, page);
     }
 
 
