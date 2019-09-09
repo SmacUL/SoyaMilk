@@ -52,17 +52,13 @@ public class NoteBookController {
     }
 
     /**
-     * 用户编辑的新笔记
+     * 2019-09-09 SmacUL
+     * 上传用户编辑的新笔记
      */
     @RequestMapping("/userNewNote")
     public boolean userNewNote(@RequestBody NoteBook noteBook) {
-//        System.out.println(bookId + "--------------");
         User user = (User) session.getAttribute("user");
-//        System.out.println(user.toString());
-//        System.out.println(noteBook.toString());
-        boolean result = noteBookService.userAddNewNoteBook(user, noteBook);
-        System.out.println(result);
-        return true;
+        return noteBookService.userAddNewNoteBook(user, noteBook);
     };
 
 }

@@ -89,8 +89,6 @@ public class NoteBookServiceImpl implements NoteBookService {
     @Override
     public boolean userAddNewNoteBook(User user, NoteBook noteBook) {
         noteBook.setAuthor_id(user.getUserId());
-        System.out.println(noteBook.toString());
-//        noteBook.setCreateTime(new Timestamp(new Date().getTime()));
         if (noteBooksMapper.addUserNoteBoook(noteBook) > 0){
             return true;
         }
