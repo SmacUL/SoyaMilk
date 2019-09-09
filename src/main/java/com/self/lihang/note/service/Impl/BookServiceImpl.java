@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,6 +42,8 @@ public class BookServiceImpl implements BookService {
 
     public Book getBook(Integer bookId){
         Book b =  bookMapper.selectByPrimaryKey(bookId);
+        DecimalFormat df = new DecimalFormat( "0.00 ");
+        b.setRate(Double.valueOf(df.format(b.getRate())));
         return b;
     }
 
@@ -117,10 +120,18 @@ public class BookServiceImpl implements BookService {
         return true;
     }
 
+
+    /**
+     * 2019-09-09 SmacUL
+     * 主要修改了 rate 的小数点的问题
+     * @param bookId
+     * @return
+     */
     @Transactional
     public BookInfo getBookInfo(Integer bookId){
         BookInfo bookInfo = new BookInfo();
-        bookInfo.setRate(bookMapper.selectBookRate(bookId));
+        DecimalFormat df = new DecimalFormat( "0.00 ");
+        bookInfo.setRate(Double.valueOf(df.format(bookMapper.selectBookRate(bookId))));
         bookInfo.setFollowPeople(followBookMapper.findFollowBookPeopleCount(bookId));
         bookInfo.setCommentNumber(commentBookMapper.selectCommentBookCount(bookId));
         bookInfo.setNoteNumber(noteBooksMapper.countBookNoteNumber(bookId));

@@ -1,3 +1,6 @@
+
+<!-- 书本页面 -->
+
 <template>
     <Layout>
       <top-nav></top-nav>
@@ -122,7 +125,7 @@
               this.button.isFollow = !this.button.isFollow;
 
               if (this.button.isFollow == false){   // 没有关注显示关注
-                this.$axios.post('/api/book/unfollow/'+this.id).then(response =>{
+                this.$axios.post('/api/book/unfollow/' + this.id).then(response =>{
                     if (response.data){
                         this.$message.success("取消关注成功！");
                         this.button.buttonText = '关注书籍';
@@ -140,10 +143,10 @@
             }
           },
           clickMenu(name){                 // 选择子路由
-              this.$router.push({ name:name,params:{bookId:this.id}});
+              this.$router.push({ name:name, params:{bookId:this.id}});
           },
           createNote(){                    // 创建笔记
-              this.$router.push( {name:'editor',params:{bookId:this.id}})
+              this.$router.push( {name:'editor', params:{bookId:this.id}})
           },
           comment(){    // 发表评论
               if (this.commentForm.title == ''|| this.commentForm.title == '' || this.commentForm.title == ''){
@@ -172,6 +175,7 @@
 
         this.$axios.post('/api/book/getBook/'+this.id).then(response => {
           this.book = response.data;
+          // this.$Message.success(this.data.rate)
         });
 
         this.$axios.post('/api/book/isfollow/'+this.id).then(response => {

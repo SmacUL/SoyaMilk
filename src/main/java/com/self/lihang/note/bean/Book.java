@@ -4,9 +4,6 @@ public class Book {
 
     public Integer bookId;
     public String bookName;
-    public String  bookContributors;
-    public String bookCover;
-    public Integer belongSubdivision_id;
 
     @Override
     public String toString() {
@@ -20,13 +17,28 @@ public class Book {
                 ", noteNumber=" + noteNumber +
                 ", authorInfo='" + authorInfo + '\'' +
                 ", catalog='" + catalog + '\'' +
+                ", rate=" + rate +
                 '}';
     }
 
+    public String  bookContributors;
+    public String bookCover;
+    public Integer belongSubdivision_id;
     public String bookBriefIntroduction;
     public Integer noteNumber;
     public String authorInfo;
     public String catalog;
+    public Double rate;
+
+
+    public Double getRate() {
+        return rate;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
 
 
 

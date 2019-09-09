@@ -44,16 +44,18 @@ public class BookControllerTest {
     @Test
     public void getBook() throws Exception {
 
-        MvcResult mvcResult = mockMvc.perform(
-                        MockMvcRequestBuilders.get("/api/book/getBook/{bookId}", 3) // 2
-//                        .param("bookId","3")        // 3
-                )
-                .andReturn();
-        int status = mvcResult.getResponse().getStatus(); // 5
-        String responseString = mvcResult.getResponse().getContentAsString(); // 6
 
-        System.out.println("--------------------");
-        System.out.println(responseString);
+
+//        MvcResult mvcResult = mockMvc.perform(
+//                        MockMvcRequestBuilders.get("/api/book/getBook/{bookId}", 3) // 2
+////                        .param("bookId","3")        // 3
+//                )
+//                .andReturn();
+//        int status = mvcResult.getResponse().getStatus(); // 5
+//        String responseString = mvcResult.getResponse().getContentAsString(); // 6
+//
+//        System.out.println("--------------------");
+//        System.out.println(responseString);
     }
 
     @Test
@@ -90,5 +92,9 @@ public class BookControllerTest {
 
     @Test
     public void getHotBook() {
+    }
+
+    @Test
+    public void getBook1() {
     }
 }

@@ -1,9 +1,6 @@
-<script>
-  /**
-   * 该组件显示书籍的简介，较简单。
-   * 该组件需要上层传入书籍的索引id，该组件自行向后端查询。
-   * */
-</script>
+<!-- 该组件显示书籍的简介，较简单。
+     该组件需要上层传入书籍的索引id，该组件自行向后端查询。
+      -->
 <template>
   <div class="Card">
     <section v-if="book.bookBriefIntroduction !=''">
