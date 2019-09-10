@@ -15,8 +15,8 @@
             </div>
             <div style="font-size: 18px;font-weight: 600;margin: 0px 15px">{{ collectFolderName }}</div>
             <div>
-              <Button size="large" type="text">编辑</Button>
-              <span style="font-size: 14px;font-weight: 600">·</span>
+<!--              <Button size="large" type="text">编辑</Button>-->
+<!--              <span style="font-size: 14px;font-weight: 600">·</span>-->
               <Button size="large" type="text" @click="deleteAll">删除</Button>
             </div>
           </div>
@@ -54,7 +54,7 @@
         <div class="right"></div>
       </div>
     </div>
-    <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+    <Footer class="layout-footer-center" style="text-align: center">2011-2016 &copy; TalkingData</Footer>
   </Layout>
 </template>
 
