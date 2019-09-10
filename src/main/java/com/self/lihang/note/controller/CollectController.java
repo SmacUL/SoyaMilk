@@ -39,7 +39,7 @@ public class CollectController {
         return collectService.createCollectFolder(collectionFolder);
     }
 
-    @RequestMapping("/getCollectionFolderPage")
+    @RequestMapping("/getCollectionFolderPage/{userId}")
     public Page getCollectFolderPage(@PathVariable Integer userId, @RequestBody Page page){
         return collectService.getMyCollectFolderByPage(userId, page);
     }
