@@ -61,4 +61,15 @@ public class NoteBookController {
         return noteBookService.userAddNewNoteBook(user, noteBook);
     };
 
+    /**
+     * 2019-09-10 SmacUL
+     * 查询指定收藏夹下的笔记
+     */
+    @RequestMapping("/getFolderNotebooks/{folderId}")
+    public List<NoteBook> getFolderNotebooks(@PathVariable Integer folderId) {
+        List<NoteBook> results = noteBookService.getNotebooksByFolderId(folderId);
+
+        return results;
+    }
+
 }

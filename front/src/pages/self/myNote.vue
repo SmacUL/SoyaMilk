@@ -66,6 +66,14 @@
         }).then(response=>{
             this.noteList = response.data.list;
             this.page.total = response.data.totalCount;
+
+            for (var i = 0; i < this.noteList.length; i++) {
+              var ymd = this.noteList[i].publicTime.substr(0, 10);
+              var hms = this.noteList[i].publicTime.substr(11, 8);
+              var time = ymd + ' ' + hms;
+              this.noteList[i].publicTime = time;
+            }
+
         });
     },
     methods:{
@@ -76,6 +84,14 @@
         }).then(response=>{
           this.noteList = response.data.list;
           this.page.total = response.data.totalCount;
+
+          for (var i = 0; i < this.noteList.length; i++) {
+            var ymd = this.noteList[i].publicTime.substr(0, 10);
+            var hms = this.noteList[i].publicTime.substr(11, 8);
+            var time = ymd + ' ' + hms;
+            this.noteList[i].publicTime = time;
+          }
+
         });
       }
     }

@@ -21,4 +21,5 @@ public interface NoteBookService {
 
     boolean userAddNewNoteBook(User user, NoteBook noteBook);
 
+    List<NoteBook> getNotebooksByFolderId(Integer folderId);
 }

@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -34,5 +35,11 @@ public class NoteBookServiceImplTest {
 //        noteBook.setPublic(0);
 
         noteBooksMapper.addUserNoteBoook(noteBook);
+    }
+
+    @Test
+    public void getNotebooksByFolderId() {
+        List<NoteBook> results = noteBooksMapper.selectByFolderId(2);
+        System.out.println(results);
     }
 }

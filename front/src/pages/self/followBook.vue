@@ -1,6 +1,4 @@
-  /***
-   * 用来显示 个人与他人关注的书籍, 个人空间可以取消关注
-   * */
+<!-- 用来显示 个人与他人关注的书籍, 个人空间可以取消关注 -->
 <template>
   <div style="width: 100%;min-height: 200px">
     <div style="width: 100%;min-height: 400px" v-if="page.total == 0">

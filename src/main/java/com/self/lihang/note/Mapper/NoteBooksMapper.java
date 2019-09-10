@@ -80,4 +80,11 @@ public interface NoteBooksMapper {
 
     @Select("select count(*) from Notebooks where belongBook_id = #{bookId}")
     int countBookNoteNumber(@Param("bookId") Integer bookId);
+
+    /**
+     * 2019-09-10 SmacUL
+     * 查询指定收藏夹下的笔记
+     */
+    @Select("select * from Notebooks where notebookId in (select notebook_id from collect where folder_id = #{folderId})")
+    List<NoteBook> selectByFolderId(Integer folderId);
 }

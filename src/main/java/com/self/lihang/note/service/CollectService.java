@@ -13,4 +13,8 @@ public interface CollectService {
     boolean cancelCollect(Collect collect);
     boolean createCollectFolder(CollectionFolder collectionFolder);
     Page getMyCollectFolderByPage(Integer userId, Page page);
+
+    String getCollectionFolderNameById(Integer folderId);
+
+    boolean deleteFolderById(Integer folderId);
 }

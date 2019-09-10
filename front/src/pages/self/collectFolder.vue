@@ -1,3 +1,4 @@
+<!-- 个人中心 收藏文件夹 -->
 <template>
   <div style="width: 100%;min-height: 200px">
     <div style="width: 100%;min-height: 400px" v-if="page.total == 0">
@@ -6,7 +7,7 @@
     <div v-else>
       <ul>
         <li v-for="folder in folders">
-          <router-link :to="{name:'collect',params:{ collectId:folder.folderId }}">
+          <router-link :to="{name:'collect',params:{ collectId:folder.folderId, userId: userId }}">
             <div style="font-size: 18px;font-weight: 600;margin: 10px 15px;color: #1a1a1a">{{ folder.folderName }}</div>
           </router-link>
             <div style="font-size: 14px;font-weight: 500;color: #8590a6;margin: 10px 15px">{{ folder.update_time }} 更新&nbsp;·&nbsp;{{ folder.number }} 条内容  </div>

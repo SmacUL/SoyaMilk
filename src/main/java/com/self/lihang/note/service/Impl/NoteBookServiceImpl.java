@@ -95,5 +95,16 @@ public class NoteBookServiceImpl implements NoteBookService {
         return false;
     }
 
+    /**
+     * 2019-09-10
+     * 查询指定收藏夹下的笔记
+     * @param folderId
+     * @return
+     */
+    @Override
+    public List<NoteBook> getNotebooksByFolderId(Integer folderId) {
+        List<NoteBook> results = noteBooksMapper.selectByFolderId(folderId);
+        return results;
+    }
 
 }

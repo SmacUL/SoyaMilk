@@ -37,4 +37,9 @@ public class CollectServiceImplTest {
             collectionFolderModel.setNumber(collectMapper.selectCountByFolderId(collectionFolderModel.getFolderId()));
         }
     }
+
+    @Test
+    public void getCollectionFolderNameById() {
+        System.out.println(collectionFolderMapper.selectNameById(5));
+    }
 }

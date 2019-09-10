@@ -30,10 +30,10 @@
             <div style="min-height: 200px;width: 30%;float:right;display:inline-block;margin-top: 10px;background-color: #FFFFFF" class="Card">
                 <Card>
                     <p slot="title">用户贡献</p>
-                    <p>关注了<span>{{ user.followed }}</span></p>
-                    <p>关注者<span>{{ user.follower }}</span></p>
-                    <p>创作了<span>{{ user.noteNumber }}</span>篇笔记</p>
-                    <p>评论了<span>{{ user.commentNumber }}</span>本书</p>
+                    <p>关注了 <span style="color: darkred; font-size: large;">{{ user.followed }}</span></p>
+                    <p>关注者 <span style="color: darkred; font-size: large;">{{ user.follower }}</span></p>
+                    <p>创作了 <span style="color: darkred; font-size: large;">{{ user.noteNumber }}</span> 篇笔记</p>
+                    <p>评论了 <span style="color: darkred; font-size: large;">{{ user.commentNumber }}</span> 本书</p>
                 </Card>
             </div>
           </div>

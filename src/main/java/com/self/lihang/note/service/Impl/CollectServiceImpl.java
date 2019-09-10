@@ -79,4 +79,30 @@ public class CollectServiceImpl implements CollectService {
         return page;
     }
 
+    /**
+     * 2019-09-10 SmacUL
+     * 利用 folderId 来查询文件夹的名称
+     * @param folderId
+     * @return
+     */
+    @Override
+    public String getCollectionFolderNameById(Integer folderId) {
+
+        return collectionFolderMapper.selectNameById(folderId);
+    }
+
+    /**
+     * 2019-09-10
+     * 删除此收藏文件夹
+     * @param folderId
+     * @return
+     */
+    @Override
+    public boolean deleteFolderById(Integer folderId) {
+        if (collectionFolderMapper.deleteByPrimaryKey(folderId) == 1) {
+            return true;
+        }
+        return false;
+    }
+
 }

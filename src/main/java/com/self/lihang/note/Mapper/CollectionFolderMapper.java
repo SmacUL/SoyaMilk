@@ -39,4 +39,12 @@ public interface CollectionFolderMapper {
     @Select("select * from collectionFolder where user_id=#{user_id}")
     List<CollectionFolderModel> selectByUserPage(@Param("user_id") Integer user_id, Page page);
 
+    /**
+     * 2019-09-10 SmacUL
+     * 利用 folderId 来查询文件夹的名称
+     * @param folderId
+     * @return
+     */
+    @Select("select folderName from collectionFolder where folderId=#{folderId}")
+    String selectNameById(Integer folderId);
 }

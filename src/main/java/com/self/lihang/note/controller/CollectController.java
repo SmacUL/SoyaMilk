@@ -44,5 +44,26 @@ public class CollectController {
         return collectService.getMyCollectFolderByPage(userId, page);
     }
 
+    /**
+     * 2019-09-10 SmacUL
+     * 利用 folderId 来查询文件夹的名称
+     * @param folderId
+     * @return
+     */
+    @RequestMapping("/getCollectionFolderName/{folderId}")
+    public String getCollectionFolderName(@PathVariable Integer folderId) {
+        return collectService.getCollectionFolderNameById(folderId);
+    }
+
+    /**
+     * 2019-09-10
+     * 删除此收藏文件夹
+     * @param folderId
+     * @return
+     */
+    @RequestMapping("/deleteFolder/{folderId}")
+    public boolean deleteFolder(@PathVariable Integer folderId) {
+        return collectService.deleteFolderById(folderId);
+    }
 
 }
