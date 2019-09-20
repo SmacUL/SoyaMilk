@@ -18,7 +18,7 @@
             </div>
             <h1>{{ note.title }}</h1>
             <div>
-              <Button id="follow" style="float: right;margin: 0px 10px" type="success" size="large" @click="follow">关注TA</Button>
+              <Button id="follow" style="float: right;margin: 0px 10px" type="success" size="large" v-bind:disabled="disabled" @click="follow">关注TA</Button>
               <div style="float: left;margin-right: 20px">
                 <router-link :to="{name:'collectFolder',params:{userId:user.userId }}">
                   <img :src="user.avatarUrl">
@@ -72,6 +72,7 @@
         data(){
           return{
               notebookId:this.$route.params.noteId,
+              disabled:false,
               user:{
                 name:'宠头条',
                 selfStyle:'已认证的官方帐号',
@@ -118,6 +119,11 @@
                 this.user = response.data.user;
                 this.note = response.data.note;
                 this.book = response.data.book;
+                if (response.data.self) {
+                    this.disabled = "disabled";
+                } else {
+                    this.disabled = false;
+                }
             });
 
             this.$axios.post('/api/isFollow/'+this.user.userId).then(response=>{

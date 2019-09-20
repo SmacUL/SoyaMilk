@@ -9,6 +9,16 @@ public class UserNoteAndBookModel{
     private Book book;
     private UserModel user;
 
+    private boolean isSelf;
+
+    public boolean isSelf() {
+        return isSelf;
+    }
+
+    public void setSelf(boolean self) {
+        isSelf = self;
+    }
+
     public NoteBook getNote() {
         return note;
     }

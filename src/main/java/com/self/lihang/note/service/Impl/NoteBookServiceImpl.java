@@ -12,6 +12,7 @@ import com.self.lihang.note.service.NoteBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import sun.font.TrueTypeFont;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
@@ -76,6 +77,14 @@ public class NoteBookServiceImpl implements NoteBookService {
         userNoteAndBookModel.setNote(noteBooksMapper.selectByPrimaryKey(notebookId));
         userNoteAndBookModel.setBook(bookMapper.selectByPrimaryKey(userNoteAndBookModel.getNote().getBelongBook_id()));
         userNoteAndBookModel.setUser(userMapper.selectByPrimaryKey(userNoteAndBookModel.getNote().getAuthor_id()));
+
+        User u = (User)session.getAttribute("user");
+        if (u.getUserId().equals(userNoteAndBookModel.getUser().getUserId())) {
+            userNoteAndBookModel.setSelf(true);
+        } else {
+            userNoteAndBookModel.setSelf(false);
+        }
+
         return userNoteAndBookModel;
     }
 
