@@ -16,7 +16,9 @@
             </MenuItem>
             <MenuItem name="myNote">
               <Icon type="ios-people" />
-              我的笔记
+              
+              <span v-if="userId == 0">我的笔记</span>
+              <span v-else>TA的笔记</span>
             </MenuItem>
             <MenuItem name="follow">
               <Icon type="ios-construct" />
