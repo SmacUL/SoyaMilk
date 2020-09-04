@@ -15,7 +15,7 @@
     "github-markdown-css": "^2.10.0",
     "iview": "^3.1.5",
     "jquery": "^3.2.1",
-    "marked": "^0.5.2",
+    "marked": "^0.7.0",
     "simditor": "^2.3.23",
     "simplemde": "^1.11.2",
     "smeditor": "^0.1.19",
